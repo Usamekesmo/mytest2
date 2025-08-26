@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الاختبار التعليمي المتقدم للحفظ</title>
+    
+    <!-- 1. ربط ملف الأنماط الخارجي (style.css) -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- 2. ربط خطوط جوجل (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- شاشة البداية -->
+    <div id="start-screen" class="container">
+        <h1>الاختبار التعليمي المتقدم للحفظ</h1>
+        <p>اختر القارئ، وحدد الصفحة وعدد الأسئلة لبدء الاختبار.</p>
+        <input type="text" id="userName" placeholder="أدخل اسمك هنا">
+          
+
+        <input type="number" id="pageNumber" placeholder="أدخل رقم الصفحة (1-604 )" min="1" max="604">
+        <div id="best-score-display"></div>
+          
+
+        <select id="qariSelect">
+            <option value="ar.alafasy" selected>مشاري العفاسي</option>
+            <option value="ar.abdulbasitmurattal">عبد الباسط عبد الصمد (مرتل)</option>
+            <option value="ar.husary">محمود خليل الحصري</option>
+            <option value="ar.minshawi">محمد صديق المنشاوي</option>
+        </select>
+          
+
+        <select id="questionsCount">
+            <option value="5">5 أسئلة</option>
+            <option value="10" selected>10 أسئلة</option>
+            <option value="15">15 سؤالاً</option>
+            <option value="20">20 سؤالاً</option>
+        </select>
+          
+  
+
+        <button id="startButton">ابدأ الاختبار</button>
+        <div id="loader" class="loader hidden"></div>
+    </div>
+
+    <!-- شاشة الاختبار -->
+    <div id="quiz-screen" class="container hidden">
+        <div id="progress-counter"></div>
+        <div id="progress-container"><div id="progress-bar"></div></div>
+        <hr>
+        <div id="question-area"></div>
+        <div id="feedback-area" class="hidden"></div>
+    </div>
+
+    <!-- شاشة مراجعة الأخطاء -->
+    <div id="error-review-screen" class="container hidden">
+        <h2>مراجعة الأخطاء</h2>
+        <p>هذه هي الأسئلة التي أخطأت فيها. راجعها جيداً لتثبيت الحفظ.</p>
+        <div id="error-list"></div>
+        <button id="show-final-result-button">عرض النتيجة النهائية</button>
+    </div>
+
+    <!-- شاشة النتيجة النهائية -->
+    <div id="result-screen" class="container hidden">
+        <h2>النتيجة النهائية</h2>
+        <p>أحسنت يا <span id="resultName"></span>!</p>
+        <p>نتيجتك هي: <span id="finalScore"></span></p>
+        <p id="new-best-score-message"></p>
+        <button>إجراء اختبار جديد</button>
+    </div>
+
+    <!--
+      3. ربط ملف الجافاسكريبت الرئيسي (main.js)
+      - type="module": هذا الجزء مهم جداً، فهو يخبر المتصفح بأننا نستخدم نظام الوحدات (Modules)
+        في جافاسكريبت، مما يسمح للملفات باستيراد (import) وتصدير (export) الدوال والمتغيرات.
+      - src="js/main.js": يحدد المسار إلى نقطة انطلاق التطبيق.
+    -->
+    <script type="module" src="js/main.js"></script>
+
+</body>
+</html>
