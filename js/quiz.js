@@ -6,7 +6,12 @@ import { fetchQuestionsConfig } from './api.js';
 import { allQuestionGenerators } from './questions.js';
 import * as player from './player.js';
 import * as progression from './progression.js';
-import { XP_SETTINGS } from './config.js';
+
+// إعدادات نقاط الخبرة (XP)
+const XP_SETTINGS = {
+    perCorrectAnswer: 10,
+    perQuizCompletion: 50
+};
 
 // --- حالة الاختبار (State) ---
 // هذا الكائن يحتفظ بكل المعلومات المؤقتة الخاصة بالاختبار الحالي فقط.
